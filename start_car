@@ -1,0 +1,15 @@
+class Car:
+    def __init__(self, color, model, CC):
+        self.color = color
+        self.model = model
+        self.cc = CC
+
+    def start_engine(self):
+        return "CHACHACHA VROOM!"
+
+mike_car = Car("Red", "Mustang", 1500)
+
+print(mike_car.start_engine())
+# prints "CHACHACHA VROOM!"
+
+print(mike_car.color)
