@@ -14,11 +14,15 @@ def guess(x):
         elif user_guess < random_number:
             print("Sorry, too low.")
     print(f"You guessed right! The number was {random_number}. Congrats!")
-    replay = input("Play again? y or n: ")
-    if replay == 'y':
-        guess(x)
-    else:
-        print("Thanks for playing!")
-        quit()
 
-guess(10)
+
+def play_again():
+    while True:
+        x = random.randint(1, 20)
+        guess(x)
+        replay = input("Play again? (y/n): ").strip().lower()
+        if replay != 'y':
+            print("Thanks for playing!")
+            break
+
+play_again()
