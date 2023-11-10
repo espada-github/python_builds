@@ -17,12 +17,11 @@ def guess(x):
 
 
 def play_again():
-    while True:
-        x = random.randint(1, 20)
-        guess(x)
+    while True: # using a while loop instead of recursion to handle multiple replay instances
+        x = random.randint(1, 20) # generates a new random range in each replay
+        guess(x) #invokes the above function to start guessing game again
         replay = input("Play again? (y/n): ").strip().lower()
-        if replay != 'y':
+        if replay != 'y': # nested condition to stop infinite loop if user enters no
             print("Thanks for playing!")
-            break
-
+            break # exits the infinite loop
 play_again()
